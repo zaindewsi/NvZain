@@ -37,3 +37,7 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- NvimTree
+keymap("n", "C-b>", "<cmd> NvimTreeToggle <CR>", opts)
+keymap("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", opts)
