@@ -1,6 +1,6 @@
 local present, catppuccin = pcall(require, "catppuccin")
 
-if not present then
+  if not present then
   return
 end
 
@@ -27,9 +27,9 @@ local settings = {
       enabled = true,
       virtual_text = {
         errors = "italic",
-	hints = "italic",
-	warnings = "italic",
-	information = "italic",
+        hints = "italic",
+        warnings = "italic",
+        information = "italic",
       },
       underlines = {
         errors = "underline",

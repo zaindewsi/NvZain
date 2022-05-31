@@ -9,7 +9,6 @@ vim.g.maplocalleader = " "
 g.did_load_filetypes = 0
 g.do_filetype_lua = 1
 
-opt.confirm = true
 opt.laststatus = 3 -- global statusline
 opt.title = true
 opt.clipboard = "unnamedplus"
@@ -72,8 +71,6 @@ local default_plugins = {
    "zipPlugin",
 }
 
--- for _, plugin in pairs(default_plugins) do
-   -- g["loaded_" .. plugin] = 1
--- end
-
-
+for _, plugin in pairs(default_plugins) do
+   g["loaded_" .. plugin] = 1
+end
