@@ -55,11 +55,17 @@ return packer.startup(function(use)
          require "plugins.indent-blankline"
       end,
    }
-   use "goolord/alpha-nvim"
    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
    -- colorscheme
    use { "catppuccin/nvim", as = "catppuccin" }
+   use {
+      "goolord/alpha-nvim",
+
+      config = function()
+         require "plugins.alpha"
+      end,
+   }
 
    -- Treesitter
    use {
