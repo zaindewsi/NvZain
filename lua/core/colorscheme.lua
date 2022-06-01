@@ -5,7 +5,7 @@ if not present then
 end
 
 local settings = {
-   transparent_background = true,
+   transparent_background = false,
    term_colors = true,
    styles = {
       comments = "italic",
@@ -72,19 +72,16 @@ local settings = {
 
 catppuccin.setup(settings)
 
-local iterm_profile = os.getenv "ITERM_PROFILE"
-local flavour = "macchiato"
-if iterm_profile == "light" then
-   flavour = "latte"
-else
-   flavour = "macchiato"
-end
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
-vim.g.catppuccin_flavour = flavour -- latte, frappe, macchiato, mocha
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_transparent_sidebar = true
+vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_day_brightness = "0.3"
 
 vim.cmd [[
 try
-  colorscheme catppuccin
+  colorscheme tokyonight
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
