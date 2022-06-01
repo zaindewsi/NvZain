@@ -49,36 +49,54 @@ return packer.startup(function(use)
    use {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
-      config = "require('plugins.treesitter')",
+      config = function()
+         require "plugins.treesitter"
+      end,
    }
    use "windwp/nvim-ts-autotag"
    use "p00f/nvim-ts-rainbow"
    use {
       "windwp/nvim-autopairs",
-      config = "require('plugins.autopairs')",
+      config = function()
+         require "plugins.autopairs"
+      end,
    }
 
    -- File tree
    use {
       "kyazdani42/nvim-tree.lua",
       requires = {
-         "kyazdani42/nvim-web-devicons", -- optional, for file icon
+         "kyazdani42/nvim-web-devicons",
       },
-      config = "require ('plugins.nvim-tree')",
+      config = function()
+         require "plugins.nvim-tree"
+      end,
    }
 
    -- status lines
    use {
       "nvim-lualine/lualine.nvim",
       requires = { "kyazdani42/nvim-web-devicons", opt = true },
-      config = "require ('plugins.lualine')",
+      config = function()
+         require "plugins.lualine"
+      end,
    }
    use {
       "akinsho/bufferline.nvim",
       requires = "kyazdani42/nvim-web-devicons",
-      config = "require('plugins.bufferline')",
+      config = function()
+         require "plugins.bufferline"
+      end,
    }
    use "moll/vim-bbye"
+
+   -- Whichkey
+   use {
+      "folke/which-key.nvim",
+      config = function()
+         require "plugins.whichkey"
+      end,
+   }
 
    -- Automatically set up your configuration after cloning packer.nvim
    if PACKER_BOOTSTRAP then

@@ -1,10 +1,6 @@
 local opt = vim.opt
 local g = vim.g
 
---Remap space as leader key
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- use filetype.lua instead of filetype.vim
 g.did_load_filetypes = 0
 g.do_filetype_lua = 1
@@ -13,7 +9,7 @@ opt.confirm = true
 opt.laststatus = 3 -- global statusline
 opt.title = true
 opt.clipboard = "unnamedplus"
-opt.cmdheight = 1
+opt.cmdheight = 2
 opt.cul = true -- cursor line
 
 -- Indentline
@@ -43,7 +39,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.tabstop = 2
 opt.termguicolors = true
-opt.timeoutlen = 100
+opt.timeoutlen = 400
 opt.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
