@@ -72,7 +72,15 @@ local settings = {
 
 catppuccin.setup(settings)
 
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+local iterm_profile = os.getenv "ITERM_PROFILE"
+local flavour = "macchiato"
+if iterm_profile == "light" then
+   flavour = "latte"
+else
+   flavour = "macchiato"
+end
+
+vim.g.catppuccin_flavour = flavour -- latte, frappe, macchiato, mocha
 
 vim.cmd [[
 try
