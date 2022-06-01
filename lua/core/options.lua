@@ -63,7 +63,6 @@ opt.wrap = false
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
-
 -- disable some builtin vim plugins
 
 local default_plugins = {
@@ -88,7 +87,5 @@ local default_plugins = {
 }
 
 -- for _, plugin in pairs(default_plugins) do
-   -- g["loaded_" .. plugin] = 1
+-- g["loaded_" .. plugin] = 1
 -- end
-
-
