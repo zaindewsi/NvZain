@@ -51,6 +51,12 @@ return packer.startup(function(use)
       run = ":TSUpdate",
       config = "require('plugins.treesitter')",
    }
+   use "windwp/nvim-ts-autotag"
+   use "p00f/nvim-ts-rainbow"
+   use {
+      "windwp/nvim-autopairs",
+      config = "require('plugins.autopairs')",
+   }
 
    -- File tree
    use {
