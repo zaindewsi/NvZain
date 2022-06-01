@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 lualine.setup {
-  options = {
-    theme = "catppuccin"
-  }
+   options = {
+      theme = "catppuccin",
+   },
 }

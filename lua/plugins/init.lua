@@ -49,15 +49,22 @@ return packer.startup(function(use)
    use {
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
-      config = require "plugins.treesitter",
+      config = "require('plugins.treesitter')",
    }
 
    -- status lines
    use {
       "nvim-lualine/lualine.nvim",
       requires = { "kyazdani42/nvim-web-devicons", opt = true },
-      config = require "plugins.lualine",
+      config = "require ('plugins.lualine')",
    }
+   use {
+      "akinsho/bufferline.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = "require('plugins.bufferline')",
+   }
+   use "moll/vim-bbye"
+
    -- Automatically set up your configuration after cloning packer.nvim
    if PACKER_BOOTSTRAP then
       require("packer").sync()
