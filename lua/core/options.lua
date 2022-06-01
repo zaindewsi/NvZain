@@ -86,6 +86,6 @@ local default_plugins = {
    "zipPlugin",
 }
 
--- for _, plugin in pairs(default_plugins) do
--- g["loaded_" .. plugin] = 1
--- end
+for _, plugin in pairs(default_plugins) do
+   g["loaded_" .. plugin] = 1
+end
