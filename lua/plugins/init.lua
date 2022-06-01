@@ -151,6 +151,14 @@ return packer.startup(function(use)
    use "L3MON4D3/LuaSnip" --snippet engine
    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+   -- Git
+   use {
+      "lewis6991/gitsigns.nvim",
+      config = function()
+         require "plugins.gitsigns"
+      end,
+   }
+
    -- Automatically set up your configuration after cloning packer.nvim
    if PACKER_BOOTSTRAP then
       require("packer").sync()
