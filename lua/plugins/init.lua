@@ -41,6 +41,22 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
    use "wbthomason/packer.nvim" -- Have packer manage itself
+   use "nvim-lua/plenary.nvim"
+   use "numToStr/Comment.nvim" -- Easily comment stuff
+   use {
+      "akinsho/toggleterm.nvim",
+      config = function()
+         require "plugins.toggleterm"
+      end,
+   }
+   use {
+      "lukas-reineke/indent-blankline.nvim",
+      config = function()
+         require "plugins.indent-blankline"
+      end,
+   }
+   use "goolord/alpha-nvim"
+   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
    -- colorscheme
    use { "catppuccin/nvim", as = "catppuccin" }
@@ -54,13 +70,13 @@ return packer.startup(function(use)
       end,
    }
    use "windwp/nvim-ts-autotag"
-   use "p00f/nvim-ts-rainbow"
    use {
       "windwp/nvim-autopairs",
       config = function()
          require "plugins.autopairs"
       end,
    }
+   use "JoosepAlviste/nvim-ts-context-commentstring"
 
    -- File tree
    use {
@@ -70,6 +86,15 @@ return packer.startup(function(use)
       },
       config = function()
          require "plugins.nvim-tree"
+      end,
+   }
+
+   -- Telescope
+   use {
+      "nvim-telescope/telescope.nvim",
+      requires = { { "nvim-lua/plenary.nvim" } },
+      config = function()
+         require "plugins.telescope"
       end,
    }
 
@@ -90,13 +115,29 @@ return packer.startup(function(use)
    }
    use "moll/vim-bbye"
 
-   -- Whichkey
+   -- LSP
    use {
-      "folke/which-key.nvim",
+      "neovim/nvim-lspconfig",
       config = function()
-         require "plugins.whichkey"
+         require "plugins.lsp"
       end,
    }
+   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+   use "b0o/SchemaStore.nvim" -- jsonls
+
+   -- cmp plugins
+   use "hrsh7th/nvim-cmp" -- The completion plugin
+   use "hrsh7th/cmp-buffer" -- buffer completions
+   use "hrsh7th/cmp-path" -- path completions
+   use "hrsh7th/cmp-cmdline" -- cmdline completions
+   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+   use "hrsh7th/cmp-nvim-lsp"
+
+   -- snippets
+   use "L3MON4D3/LuaSnip" --snippet engine
+   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
    -- Automatically set up your configuration after cloning packer.nvim
    if PACKER_BOOTSTRAP then

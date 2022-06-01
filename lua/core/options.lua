@@ -5,7 +5,6 @@ local g = vim.g
 g.did_load_filetypes = 0
 g.do_filetype_lua = 1
 
-opt.confirm = true
 opt.laststatus = 3 -- global statusline
 opt.title = true
 opt.clipboard = "unnamedplus"
@@ -39,7 +38,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.tabstop = 2
 opt.termguicolors = true
-opt.timeoutlen = 400
+opt.timeoutlen = 500
 opt.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns

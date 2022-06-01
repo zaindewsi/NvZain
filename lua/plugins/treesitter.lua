@@ -1,12 +1,3 @@
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-   underline = true,
-   virtual_text = {
-      spacing = 5,
-      severity_limit = "Warning",
-   },
-   update_in_insert = true,
-})
-
 local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
 
 if not status_ok then
@@ -40,6 +31,9 @@ local options = {
       max_file_lines = nil,
    },
    autopairs = {
+      enable = true,
+   },
+   context_commentstring = {
       enable = true,
    },
 }
