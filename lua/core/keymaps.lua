@@ -16,12 +16,15 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
 -- Edit config
 keymap("n", "<leader>E", ":e ~/.config/nvim/init.lua<cr>", opts)
 
 -- Format document
 keymap("n", "<leader>fm", "<cmd>Format<CR>", opts)
+
+-- comments
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

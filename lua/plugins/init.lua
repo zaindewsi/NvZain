@@ -42,7 +42,12 @@ packer.init {
 return packer.startup(function(use)
    use "wbthomason/packer.nvim" -- Have packer manage itself
    use "nvim-lua/plenary.nvim"
-   use "numToStr/Comment.nvim" -- Easily comment stuff
+   use {
+      "numToStr/Comment.nvim",
+      config = function()
+         require "plugins.comment"
+      end,
+   } -- Easily comment stuff
    use {
       "akinsho/toggleterm.nvim",
       config = function()
