@@ -89,6 +89,13 @@ return packer.startup(function(use)
       end,
    }
    use "JoosepAlviste/nvim-ts-context-commentstring"
+   use "p00f/nvim-ts-rainbow"
+   use {
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+         require("colorizer").setup()
+      end,
+   }
 
    -- File tree
    use {

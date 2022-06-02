@@ -5,7 +5,7 @@ if not present then
 end
 
 local settings = {
-   transparent_background = false,
+   transparent_background = true,
    term_colors = true,
    styles = {
       comments = "italic",
@@ -46,7 +46,7 @@ local settings = {
       telescope = true,
       nvimtree = {
          enabled = true,
-         show_root = false,
+         show_root = true,
          transparent_panel = false,
       },
       which_key = false,
@@ -62,7 +62,7 @@ local settings = {
       bufferline = true,
       markdown = true,
       lightspeed = false,
-      ts_rainbow = false,
+      ts_rainbow = true,
       hop = false,
       notify = true,
       telekasten = true,
@@ -72,7 +72,7 @@ local settings = {
 
 catppuccin.setup(settings)
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 vim.g.tokyonight_transparent = true
 vim.g.tokyonight_transparent_sidebar = true
@@ -81,7 +81,7 @@ vim.g.tokyonight_day_brightness = "0.3"
 
 vim.cmd [[
 try
-  colorscheme tokyonight
+  colorscheme catppuccin
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
