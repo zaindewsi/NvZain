@@ -1,12 +1,20 @@
-local present, catppuccin = pcall(require, "catppuccin")
+local present, theme = pcall(require, "catppuccin")
 
 if not present then
    return
 end
 
-local settings = {
+local iterm_profile = os.getenv "ITERM_PROFILE"
+local style = "macchiato"
+if iterm_profile == "light" then
+   style = "latte"
+else
+   style = "macchiato"
+end
+
+local setup = {
    transparent_background = true,
-   term_colors = true,
+   term_colors = false,
    styles = {
       comments = "italic",
       conditionals = "italic",
@@ -46,7 +54,12 @@ local settings = {
       telescope = true,
       nvimtree = {
          enabled = true,
-         show_root = true,
+         show_root = false,
+         transparent_panel = true,
+      },
+      neotree = {
+         enabled = false,
+         show_root = false,
          transparent_panel = false,
       },
       which_key = false,
@@ -62,7 +75,7 @@ local settings = {
       bufferline = true,
       markdown = true,
       lightspeed = false,
-      ts_rainbow = true,
+      ts_rainbow = false,
       hop = false,
       notify = true,
       telekasten = true,
@@ -70,14 +83,9 @@ local settings = {
    },
 }
 
-catppuccin.setup(settings)
+theme.setup(setup)
 
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_transparent_sidebar = true
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_day_brightness = "0.3"
+vim.g.catppuccin_flavour = style
 
 vim.cmd [[
 try
