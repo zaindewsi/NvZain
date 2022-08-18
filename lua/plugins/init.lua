@@ -44,6 +44,7 @@ return packer.startup(function(use)
    use "nvim-lua/plenary.nvim"
    use {
       "numToStr/Comment.nvim",
+      tag = "v0.6.1",
       config = function()
          require "plugins.comment"
       end,
@@ -64,6 +65,7 @@ return packer.startup(function(use)
 
    -- colorscheme
    use { "catppuccin/nvim", as = "catppuccin" }
+   use "folke/tokyonight.nvim"
 
    use {
       "goolord/alpha-nvim",

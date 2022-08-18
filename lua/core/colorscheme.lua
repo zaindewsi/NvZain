@@ -1,29 +1,19 @@
-local present, theme = pcall(require, "catppuccin")
-
-if not present then
-   print "color fail"
-   return
-end
-
 local iterm_profile = os.getenv "ITERM_PROFILE"
-local style = "macchiato"
+local style = "storm"
 if iterm_profile == "light" then
-   style = "latte"
+   style = "day"
 else
-   style = "macchiato"
+   style = "storm"
 end
 
-local setup = {
-   transparent_background = true,
-}
-
-theme.setup(setup)
-
-vim.g.catppuccin_flavour = style
+vim.g.tokyonight_style = style
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_transparent_sidebar = true
+vim.g.tokyonight_day_brightness = 0.2
 
 vim.cmd [[
 try
-  colorscheme catppuccin
+  colorscheme tokyonight
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
