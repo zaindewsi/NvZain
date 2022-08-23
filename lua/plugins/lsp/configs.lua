@@ -16,6 +16,8 @@ local servers = {
    "eslint",
    "sqlls",
    "rust_analyzer",
+   "taplo",
+   "prismals",
 }
 
 lsp_installer.setup {

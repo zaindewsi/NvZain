@@ -21,8 +21,9 @@ null_ls.setup {
    end,
    debug = false,
    sources = {
-      formatting.prettier,
+      formatting.prettierd,
       formatting.stylua,
       diagnostics.eslint,
+      formatting.rustfmt,
    },
 }

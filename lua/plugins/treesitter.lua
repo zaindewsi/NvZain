@@ -17,6 +17,7 @@ local options = {
       "scss",
       "tsx",
       "typescript",
+      "prisma",
    },
    highlight = {
       enable = true,
