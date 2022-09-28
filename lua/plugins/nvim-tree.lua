@@ -23,7 +23,6 @@ nvim_tree.setup {
    disable_netrw = true,
    hijack_netrw = true,
    auto_reload_on_write = true,
-
    open_on_setup = false,
    ignore_ft_on_setup = {
       "startify",
@@ -52,7 +51,7 @@ nvim_tree.setup {
       args = {},
    },
    filters = {
-      dotfiles = true,
+      dotfiles = false,
       custom = { ".git" },
       exclude = { ".gitignore", "gitsigns", ".env.*", ".env", ".prettierrc", ".eslintrc.*", ".eslintrc" },
    },

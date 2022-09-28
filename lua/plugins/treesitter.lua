@@ -17,6 +17,8 @@ local options = {
       "scss",
       "tsx",
       "typescript",
+      "cpp",
+      "cmake",
    },
    highlight = {
       enable = true,

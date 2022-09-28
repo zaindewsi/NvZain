@@ -16,6 +16,7 @@ local servers = {
    "eslint",
    "sqlls",
    "rust_analyzer",
+   "clangd",
 }
 
 lsp_installer.setup {
