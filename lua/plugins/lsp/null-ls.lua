@@ -21,9 +21,10 @@ null_ls.setup {
    end,
    debug = false,
    sources = {
-      formatting.prettier,
+      formatting.prettierd,
       formatting.stylua,
       formatting.rustfmt,
       diagnostics.eslint,
+      formatting.rustfmt,
    },
 }

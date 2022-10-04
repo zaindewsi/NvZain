@@ -19,6 +19,7 @@ local options = {
       "typescript",
       "cpp",
       "cmake",
+      "prisma",
    },
    highlight = {
       enable = true,

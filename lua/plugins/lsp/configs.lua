@@ -17,6 +17,8 @@ local servers = {
    "sqlls",
    "rust_analyzer",
    "clangd",
+   "taplo",
+   "prismals",
 }
 
 lsp_installer.setup {
