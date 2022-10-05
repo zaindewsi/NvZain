@@ -9,7 +9,7 @@ end
 vim.g.tokyonight_style = style
 vim.g.tokyonight_transparent = true
 vim.g.tokyonight_transparent_sidebar = true
-vim.g.tokyonight_day_brightness = 0.2
+vim.g.tokyonight_day_brightness = 0.5
 
 vim.cmd [[
 try
