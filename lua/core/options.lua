@@ -2,7 +2,6 @@ local opt = vim.opt
 local g = vim.g
 
 -- use filetype.lua instead of filetype.vim
-g.did_load_filetypes = 0
 g.do_filetype_lua = 1
 
 opt.laststatus = 3 -- global statusline
@@ -22,12 +21,11 @@ opt.fillchars = { eob = " " }
 opt.hidden = true
 opt.ignorecase = true
 opt.smartcase = true
-opt.mouse = "a"
 
 -- Numbers
 opt.number = true
-opt.numberwidth = 2
-opt.relativenumber = false
+opt.numberwidth = 4
+opt.relativenumber = true
 opt.ruler = false
 
 -- disable nvim intro
@@ -55,8 +53,8 @@ opt.pumheight = 10
 opt.showmode = false
 opt.showtabline = 2
 opt.wrap = false
-opt.scrolloff = 8
-opt.sidescrolloff = 8
+opt.scrolloff = 10
+opt.sidescrolloff = 10
 
 -- disable some builtin vim plugins
 
