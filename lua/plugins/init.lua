@@ -19,7 +19,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerUpdate --preview
+    autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerSync --preview
   augroup end
 ]]
 
