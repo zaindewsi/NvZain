@@ -19,7 +19,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerSync
+    autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerUpdate --preview
   augroup end
 ]]
 
@@ -61,10 +61,8 @@ return packer.startup(function(use)
          require "plugins.indent-blankline"
       end,
    }
-   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
    -- colorscheme
-   use { "catppuccin/nvim", as = "catppuccin" }
    use "folke/tokyonight.nvim"
 
    use {
