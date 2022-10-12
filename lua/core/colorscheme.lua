@@ -1,15 +1,16 @@
 local iterm_profile = os.getenv "ITERM_PROFILE"
-local style = "storm"
+local theme = "moon"
 if iterm_profile == "light" then
-   style = "day"
+   theme = "day"
 else
-   style = "storm"
+   theme = "moon"
 end
 
-vim.g.tokyonight_style = style
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_transparent_sidebar = true
-vim.g.tokyonight_day_brightness = 0.5
+require("tokyonight").setup {
+   style = theme,
+   transparent = true,
+   day_brightness = 0.4,
+}
 
 vim.cmd [[
 try
