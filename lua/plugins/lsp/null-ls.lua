@@ -24,6 +24,7 @@ null_ls.setup {
       formatting.prettierd,
       formatting.stylua,
       formatting.rustfmt,
+      formatting.eslint_d,
       diagnostics.eslint,
       formatting.rustfmt,
    },
