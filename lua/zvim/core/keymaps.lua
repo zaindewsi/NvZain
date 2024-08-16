@@ -2,6 +2,7 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
+local opts = { noremap = true, silent = true }
 
 ---------------------
 -- General Keymaps -------------------
@@ -30,3 +31,32 @@ keymap.set("n", "<S-l>", ":bnext<CR>", opts)
 keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 keymap.set("n", "<leader>x", "<cmd>Bdelete!<CR>", opts)
 keymap.set("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+
+-- Move text up and down
+keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>gv-gv", opts)
+keymap.set("n", "<A-k>", "<Esc>:m .-2<CR>gv-gv", opts)
+
+-- Visual --
+-- Stay in indent mode
+keymap.set("v", "<", "<gv", opts)
+keymap.set("v", ">", ">gv", opts)
+
+-- Move text up and down
+keymap.set("v", "<A-j>", ":m .+1<CR>==", opts)
+keymap.set("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap.set("v", "p", '"_dP', opts)
+
+-- Visual Block --
+-- Move text up and down
+keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap.set("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+keymap.set("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Terminal
+keymap.set("n", "<A-i>", "<cmd>ToggleTerm direction=float<CR>", opts)
+keymap.set("n", "<A-h>", "<cmd>ToggleTerm size=20 direction=horizontal<CR>", opts)
+keymap.set("n", "<A-v>", "<cmd>ToggleTerm size=60 direction=vertical<CR>", opts)
+keymap.set("t", "<A-i>", "<cmd>ToggleTerm direction=float<CR>", opts)
+keymap.set("t", "<A-h>", "<cmd>ToggleTerm size=20 direction=horizontal<CR>", opts)
+keymap.set("t", "<A-v>", "<cmd>ToggleTerm size=60 direction=vertical<CR>", opts)
