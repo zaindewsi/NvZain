@@ -1,2 +1,2 @@
-require "core"
-require "plugins"
+require("zvim.core")
+require("zvim.lazy")
