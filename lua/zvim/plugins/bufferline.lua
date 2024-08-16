@@ -7,11 +7,10 @@ return {
       mode = "buffers",
       separator_style = "slant",
       offsets = {
-          {
-              filetype = "NvimTree"
-          }
-      }
+        {
+          filetype = "NvimTree",
+        },
+      },
     },
   },
 }
-
