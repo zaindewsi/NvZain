@@ -20,6 +20,9 @@ return {
 
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+
+      vim.diagnostic.config({ virtual_text = false }),
+
       callback = function(ev)
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
